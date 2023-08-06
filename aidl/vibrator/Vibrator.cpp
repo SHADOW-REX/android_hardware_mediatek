@@ -98,10 +98,9 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
 }
 
 ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    for (auto const& pair : vibEffects) _aidl_return->push_back(pair.first);
-#else
-ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* /* _aidl_return */) {
-#endif
+    for (auto const& pair : vibEffects)
+        _aidl_return->push_back(pair.first);
+
     return ndk::ScopedAStatus::ok();
 }
 

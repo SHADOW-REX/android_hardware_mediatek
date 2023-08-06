@@ -24,10 +24,10 @@ const std::string kVibratorActivate = "/sys/class/leds/vibrator/activate";
 #ifdef VIBRATOR_SUPPORTS_EFFECTS
 const std::string kVibratorStrength = "/sys/kernel/thunderquake_engine/level";
 const std::string kVibratorStrengthMax = "/sys/kernel/thunderquake_engine/max";
+#endif
 
 static std::map<EffectStrength, float> vibStrengths = {
         {EffectStrength::LIGHT, 0.25}, {EffectStrength::MEDIUM, 0.5}, {EffectStrength::STRONG, 1}};
-#endif
 
 class Vibrator : public BnVibrator {
   public:
